@@ -67,6 +67,9 @@ class chatbot(discord.Client):
             await channel.send(msg)
             return None
         
+        elif message.content.startswith('!!fuck'):
+            await message.channel.send('fucking git hub')
+        
 
 
 # 프로그램이 실행되면 제일 처음으로 실행되는 함수
