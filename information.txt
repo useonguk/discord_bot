@@ -1,0 +1,12 @@
+학교코드 = C100000450
+디스코드 토큰 = MTAzNjg0MjM5NzU2MjMyNzEwMw.GqXcNS.FGNnr5oEIhyv0nM5dvqJlFzFVIBGK7dWKdgFqE
+
+급식 출력문 = # message.content = message의 내용
+        if message.content == "오늘급식":
+            # 현재 채널을 받아옴
+            channel = message.channel
+            # 답변 내용 구성
+            msg =  element
+            # msg에 지정된 내용대로 메시지를 전송
+            await channel.send(msg)
+            return None
