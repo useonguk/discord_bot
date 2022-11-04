@@ -1,12 +1,9 @@
 # discord 라이브러리 사용 선언
-from discord.ext import commands
 import discord
 import requests
 from bs4 import BeautifulSoup
 import datetime
 import re
-
-bot = commands.Bot(command_prefix='!!',intents=discord.Intents.all())
 now = str(datetime.datetime.now())
 day = now[:4] + now[5:7] + now[8:10]
 
@@ -49,27 +46,20 @@ class chatbot(discord.Client):
         print("READY")
 
     # 봇에 메시지가 오면 수행 될 액션
-    @bot.event
     async def on_message(self, message):
         # SENDER가 BOT일 경우 반응을 하지 않도록 한다.
         if message.author.bot:
             return None
 
-        if message.content.startswith('!!hellow'):
-            await message.channel.send('Hellow')
-
-        elif message.content.startswith('!!급식'):
-             # 현재 채널을 받아옴
+        # message.content = message의 내용
+        if message.content == "오늘급식":
+            # 현재 채널을 받아옴
             channel = message.channel
             # 답변 내용 구성
             msg =  element
             # msg에 지정된 내용대로 메시지를 전송
             await channel.send(msg)
             return None
-        
-        elif message.content.startswith('!!fuck'):
-            await message.channel.send('fucking git hub')
-        
 
 
 # 프로그램이 실행되면 제일 처음으로 실행되는 함수
